@@ -1,78 +1,694 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shubham Gupta</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
+    <title>Shubham Gupta - Web Developer</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/dashboard/">
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="dashboard.css" rel="stylesheet">
     <style>
-    body {
-        background-color: #F8F9FA;
-    }
+        #animated_div {
+            width: 30px;
+            height: 47px;
+            background: white;
+            color: #ffffff;
+            position: relative;
+            font-weight: bold;
+            font-size: 40px;
+            padding: 10px;
+            animation: animated_div 5s 1;
+            -moz-animation: animated_div 5s 1;
+            -webkit-animation: animated_div 5s 1;
+            -o-animation: animated_div 5s 1;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+        }
+
+        @keyframes animated_div {
+            0% {
+                transform: rotate(0deg);
+                left: 0px;
+            }
+
+            25% {
+                transform: rotate(20deg);
+                left: 0px;
+            }
+
+            50% {
+                transform: rotate(0deg);
+                left: 500px;
+            }
+
+            55% {
+                transform: rotate(0deg);
+                left: 500px;
+            }
+
+            70% {
+                transform: rotate(0deg);
+                left: 500px;
+                background: #1ec7e6;
+            }
+
+            100% {
+                transform: rotate(-360deg);
+                left: 0px;
+            }
+        }
+
+        @-webkit-keyframes animated_div {
+            0% {
+                -webkit-transform: rotate(0deg);
+                left: 0px;
+            }
+
+            25% {
+                -webkit-transform: rotate(20deg);
+                left: 0px;
+            }
+
+            50% {
+                -webkit-transform: rotate(0deg);
+                left: 500px;
+            }
+
+            55% {
+                -webkit-transform: rotate(0deg);
+                left: 500px;
+            }
+
+            70% {
+                -webkit-transform: rotate(0deg);
+                left: 500px;
+                background: #1ec7e6;
+            }
+
+            100% {
+                -webkit-transform: rotate(-360deg);
+                left: 0px;
+            }
+        }
+
+        @-moz-keyframes animated_div {
+            0% {
+                -moz-transform: rotate(0deg);
+                left: 0px;
+            }
+
+            25% {
+                -moz-transform: rotate(20deg);
+                left: 0px;
+            }
+
+            50% {
+                -moz-transform: rotate(0deg);
+                left: 500px;
+            }
+
+            55% {
+                -moz-transform: rotate(0deg);
+                left: 500px;
+            }
+
+            70% {
+                -moz-transform: rotate(0deg);
+                left: 500px;
+                background: #1ec7e6;
+            }
+
+            100% {
+                -moz-transform: rotate(-360deg);
+                left: 0px;
+            }
+        }
+
+        @-o-keyframes animated_div {
+            0% {
+                transform: rotate(0deg);
+                left: 0px;
+            }
+
+            25% {
+                transform: rotate(20deg);
+                left: 0px;
+            }
+
+            50% {
+                transform: rotate(0deg);
+                left: 500px;
+            }
+
+            55% {
+                transform: rotate(0deg);
+                left: 500px;
+            }
+
+            70% {
+                transform: rotate(0deg);
+                left: 500px;
+                background: #1ec7e6;
+            }
+
+            100% {
+                transform: rotate(-360deg);
+                left: 0px;
+            }
+        }
+
+        .quote {
+            padding-left: 70%;
+        }
+
+        #headerName {
+            text-align-last: center;
+            font-size: medium;
+            font: bold;
+        }
+
+        img {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            width: 150px;
+        }
+
+        img:hover {
+            box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+        }
+        .external {
+            color: rosybrown;
+        }
+        .nav-link2 {
+            color: black;
+        }
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-dark bg-primary">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Brand</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Link</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                            aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">One more separated link</a></li>
-                        </ul>
-                    </li>
-                </ul>
-                <form class="navbar-form navbar-left">
-                    <button type="submit" class="btn btn-default">Download Resume</button>
-                </form>
-                
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+        <a id="headerName" class="navbar-brand col-sm-3 col-md-3 mr-0" href="#">I'm Shubham Gupta</a>
+        <span id="headerName" class="form-control form-control-dark w-100" type="text">
+            <a data-feather="bar-chart-2"> </a> Skills : <a id="flash"></a>
+        </span>
+        <ul class="navbar-nav px-5">
+            <li class="nav-item text-nowrap">
+                <a class="nav-link btn btn-default"
+                    href="https://drive.google.com/file/d/1r3ZOk0WAH8a69YTS71pGKDihFOCs70Vk/view?usp=sharing">Download
+                    Resume</a>
+            </li>
+        </ul>
     </nav>
 
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">
+                                <span>👋 </span>
+                                Hi there <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#education">
+                                <span data-feather="book-open"></span>
+                                Education
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#skills">
+                                <span data-feather="bar-chart-2"></span>
+                                Skills
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#projects">
+                                <span data-feather="archive"></span>
+                                Projects
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#internship">
+                                <span data-feather="terminal"></span>
+                                Internship
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#experiences">
+                                <span data-feather="briefcase"></span>
+                                Experirences
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">
+                                <span data-feather="hash"></span>
+                                Contact
+                            </a>
+                        </li>
+                    </ul>
 
-    
+                    <h6
+                        class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+                        <span>Links</span>
+                        <a class="d-flex align-items-center text-muted" href="#">
+                            <span data-feather="external-link"></span>
+                        </a>
+                    </h6>
+                    <ul class="nav flex-column mb-2">
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.linkedin.com/in/shubham121gupta/">
+                                <span data-feather="linkedin"></span>
+                                LinkedIn
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://github.com/shubham121gupta">
+                                <span data-feather="github"></span>
+                                GitHub
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://www.instagram.com/shubham121gupta/">
+                                <span data-feather="instagram"></span>
+                                Instagram
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="shubham4581@gmail.com">
+                                <span data-feather="mail"></span>
+                                Mail
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
 
-    <div class="jumbotron">
-        <div class="container">
-        <h1>Hello, world!</h1>
-        <p>...</p>
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
-      </div>
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+                <div class="flex-shrink-0 col-12 col-md-9 mb-4 mb-md-0">
+
+                    <article class="markdown-body entry-content container-lg f5" itemprop="text">
+                        <h1>Hi there <g-emoji id="animated_div">
+                                👋</g-emoji>
+                        </h1>
+                        <h3></a>“Being a student is easy. Learning requires actual work.” -
+                        </h3>
+                        <h3 class="quote">William Crawford</h3>
+                        <p>My life gist :</p>
+                        <ul>
+                            <li>
+                                🔭 I’m currently working on C2C Platform which made
+                                people to Buy/sell goods locally.
+                            </li>
+                            <li>
+                                📚 It is during our darkest moments that we must focus to
+                                see the light.
+                            </li>
+                            <li>
+                                🌱 I’m currently learning to manange my time and stay
+                                updated.
+                            </li>
+                            <li>
+                                👯 I’m looking to collaborate on any idea that impresses
+                                me.
+                            </li>
+                            <li>
+                                💬 Ask me about Web Development, SQL, NoSQL, NodeJs,
+                                JavaScript,
+                            </li>
+                            <li>
+                                📫 How to reach me: <a href="https://github.com/shubham121gupta">shubham121gupta</a>
+                            </li>
+                            <li>
+                                ⚡ Fun fact: I love Cold Coffee ☕
+                            </li>
+                        </ul>
+                        <p>I strongly believe that constant learning is a part of our journey, and if at
+                            some point one stops the process, that person is out of the game.</p>
+                        <p>As a Intern in FetMeIn:
+                            Worked with backend team of the company and hands on with its schemas,
+                            stored procedures, structure of the database (sql server), Asp .net, MVC etc
+                            As well as frontend team of technology on tools like Vanilla JS , angular ,
+                            react-native etc,
+                            and understand the working , the technologies , team efforts and the
+                            environment.</p>
+                        <p id="education">Social media is a tool you can use to leverage your digital identity, an
+                            identity on which only you have the control. I am a product of digital
+                            identity and strongly believe in creating an online presence.</p>
+                    </article>
+                    <br>
+                    <article  class="markdown-body entry-content container-lg f5" itemprop="text">
+                        <h1> <span data-feather="book-open"></span> Education </h1>
+                        <br>
+                        <ul>
+                            <li>
+                                <h5>B. TECH IN COMPUTER SCIENCE (still pursuing)</h5>
+                            </li>
+                            <p>I.E.S COLLEGE OF TECHNOLOGY, BHOPAL- (R.G.P.V UNIVERSITY)</p>
+                            <p><i>7.1 CGPA (as present from 2017)</i></p>
+                            <br>
+                            <li>
+                                <h5>HIGHER SECONDARY SCHOOL (12TH GRADE)</h5>
+                            </li>
+                            <p>RAJNATH +2 HIGHER SECONDARY SCHOOL, BHOJPUR, ARA</p>
+                            <p><i>67%</i></p>
+                            <br>
+                            <li>
+                                <h5>SECONDARY SCHOOL (10TH GRADE)</h5>
+                            </li>
+                            <p>GYAN JYOTI AWASIYA VIDYALAYA, BAMPALI, ARA</p>
+                            <p id="skills"><i>9.4 CGPA</i></p>
+                            </li>
+                        </ul>
+                    </article>
+                    <br>
+                    <article class="markdown-body entry-content container-lg f5" itemprop="text">
+                        <h1 id=""> <span data-feather="bar-chart-2"></span> Skills </h1>
+                        <br>
+                        <ul>
+                            <li>
+                                <h6>Primary</h6>
+                            </li>
+                            <p>• Programming Language: JavaScript, C++</p>
+                            <p>• Frontend: HTML, CSS </p>
+                            <p>• NodeJS </p>
+                            <p>• RDBMS: SQL SERVER </p>
+                            <p>• Repository: Git/GitHub </p>
+                            <p>• Others: REST APIs </p>
+                            <p>
+                                <li>
+                                    <h6>Secondary Skills</h6>
+                                </li>
+                            <p>• NoSQL: MongoDB </p>
+                            <p>• Server: Windows Server </p>
+                            <p>• Analytics: Mixpanel </p>
+                            <p id="projects">• Google APIs </p>
+                        </ul>
+                    </article>
+                    <br>
+                    <article class="markdown-body entry-content container-lg f5" itemprop="text">
+                        <h1> <span data-feather="archive"></span> Projects </h1>
+                        <br>
+                        <ul>
+
+                            <h5>1. <u><a class="external" href="http://103.231.209.235:1337/index.html">Easy Classifieds</a></u> </h5><span>March 20 - present</span>
+                            <br><br>
+                            <p><i><b>'Easy Classifieds' is a solution for many Individuals/Organisations who want to
+                                        sell
+                                        their new or old products but not make their reach to the right customers. Easy
+                                        Classifieds provides these people with the access to achieve such goals.</b></i>
+                            </p>
+                            <br>
+                            <li>
+                                <h6><span>Technologies used:</span> </h6>
+                            </li>
+                            <p>• HTML/CSS​</p>
+                            <p>• Javascript​</p>
+                            <p>• NodeJs ( APIs )</p>
+                            <p>• MS SQL Server ( Database )</p>
+                        </ul>
+                        <a target="_blank" href="/images/easycmobile.png">
+                            <img src="/images/easycmobile.png" alt="easy classifieds" style="width:150px">
+                          </a>
+                          <a target="_blank" href="/images/easyctab.png">
+                            <img src="/images/easyctab.png" alt="easy classifieds" style="width:180px; height:230px">
+                          </a>
+                        <br><br><br>
+                        <ul>
+                            <h5>2. <u> <a class="external" href="http://103.231.209.235:3000/">COVID-19 Help Community</a></u> </h5><span>March 20 - present</span>
+                            <br><br>
+                            <p><i><b>A project which dedicated for the help in pandemic situations such the COVID-19.
+                                        Due to lockdown and no source of income for many peoples who stucked into their
+                                        places with no sufficient food or money.
+                                        In this webpage people can select their locations and post for their help and
+                                        NGOs/Govt. officials which are working in those location can see those help
+                                        requests and respond with the help.</b></i></p>
+                            <br>
+                            <li>
+                                <h6><span>Technologies used:</span> </h6>
+                            </li>
+                            <p>• HTML/CSS​</p>
+                            <p>• Javascript​</p>
+                            <p>• NodeJs ( APIs )</p>
+                            <p>• MS SQL Server ( Database )</p>
+                        </ul>
+                        <a target="_blank" href="/images/covidhelpmobile.png">
+                            <img src="/images/covidhelpmobile.png" alt="easy classifieds" style="width:150px">
+                          </a>
+                        <a target="_blank" href="/images/covidhelptab.png">
+                            <img src="/images/covidhelptab.png" alt="easy classifieds" style="width:180px; height: 290px;">
+                          </a>
+                          <br><br><br>
+                        <ul>
+                            <h5>3. <u> <a class="external" href="#">COVID-19 Live Cases (Country)</a></u> </h5><span>March 20 - present</span>
+                            <br><br>
+                            <p><i><b>COVID-19 Live Case stats (live cases updates): Enter or choose country name to
+                                        get count of cases of covid-19 with more information’s of day-to-day cases
+                                        including new, recovered and deaths cases. </b></i></p>
+                            <br>
+                            <li>
+                                <h6><span>Technologies used:</span> </h6>
+                            </li>
+                            <p>• HTML/CSS​</p>
+                            <p>• Javascript​</p>
+                            <p>• External API Call</p>
+                        </ul>
+                        <a target="_blank" href="/images/covidststmobile.png">
+                            <img src="/images/covidststmobile.png" alt="easy classifieds" style="width:150px">
+                          </a>
+                        <a target="_blank" href="/images/covidstattab.png">
+                            <img src="/images/covidstattab.png" alt="easy classifieds" style="width:180px; height: 290px;">
+                          </a>
+                          <br><br><br>
+                    </article>
+                    <br>
+                    <article id="internship" class="markdown-body entry-content container-lg f5" itemprop="text">
+                        <h1> <span data-feather="terminal"></span> Internship </h1>
+                        <br>
+                        <ul>
+                            <h5>1. <u>FitMeIn</u> </h5>
+                            <span>Noida, Uttar Pradesh</span><br>
+                            <span>Jun 19 - Jul 19 . 2 mos</span>
+                            <br><br>
+                            <p><i><b>Worked with backend team of the company and hands on with its schemas, stored
+                                        procedures, structure of the database (sql server), Asp .net, MVC etc
+                                        As well as frontend team of technology on tools like Vanilla JS, angular,
+                                        react-native etc,
+                                        and understand the working, the technologies, team efforts and the
+                                        environment.</b></i>
+                            </p>
+                        </ul>
+                    </article>
+                    <br>
+                    <br>
+                    <article id="contact" class="markdown-body entry-content container-lg f5" itemprop="text">
+                        <h1> <span data-feather="hash"></span> Contact </h1>
+                        <br>
+                        <ul>
+                            <h6><u>Mail :</u></h6>
+                            <span>Shubham4581@gmail.com</span><br>
+                            <h6><u>Mobile :</u></h6>
+                            <span>+91 960 899 7159</span>
+                            <br><br>
+                            <a class="nav-link2" href="https://www.linkedin.com/in/shubham121gupta/">
+                                <span data-feather="linkedin"></span>
+                                LinkedIn
+                            </a>
+                            <a class="nav-link2" href="https://github.com/shubham121gupta">
+                                <span data-feather="github"></span>
+                                GitHub
+                            </a>
+                            <a class="nav-link2" href="https://www.instagram.com/shubham121gupta/">
+                                <span data-feather="instagram"></span>
+                                Instagram
+                            </a>
+                        </ul>
+                    </article>
+                    <br><br>
+                    <article class="markdown-body entry-content container-lg f5" itemprop="text">
+                        <p id="headerName" class="jstext">
+                            Copyright &#169; 2020 Shubham Gupta
+                        </p>
+                    </article>
+                </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </main>
+    </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script>
+        feather.replace()
 
+        var Skills = ["JavaScript", "SQL", "NodeJs", "HTML", "CSS"],
+            index = 0;
+        function cycle() {
+            $('#flash').html(Skills[index]);
+            index++;
+            if (index === Skills.length) {
+                index = 0;
+            }
+            setTimeout(cycle, 1000);
+        }
+        cycle();
+
+        var wish = ["Hire Me", "Hire", "Me"],
+            index2 = 0;
+        function cycle2() {
+            $('#flash2').html(wish[index2]);
+            index2++;
+            if (index === wish.length) {
+                index2 = 0;
+            }
+            setTimeout(cycle2, 1000);
+        }
+        cycle2();
+
+        var sections = [
+            {
+                sentence: "Thank You For Reach Till Here"
+            },
+            {
+                sentence: "Mail Me On Shubham4581@gmail.com"
+            },
+            {
+                sentence: "Made With ❤ By Shubham Gupta"
+            },
+            {
+                sentence: "Copyright © 2020  Shubham Gupta"
+            }
+        ];
+        var i = 0;
+        var j = 0;
+        var k = 0;
+        var lengthSentence = 0;
+        var lengthArray = sections.length;
+        var forward = true;
+        var beginning = "";
+        var currentPart = "";
+        var interval = 1; // interval letter
+        var opening = false;
+        var pauseEnd = 2500; // pause end sentence
+
+        /* ----------------------- 
+            TYPING 
+        -------------------------*/
+        function writing(text) {
+            lengthSentence = sections[i].sentence.length;
+            var body = $("body");
+            if (!opening) { // first part
+                setTimeout(function () {
+                    if (k < beginning.length) {
+                        if (beginning[k] === "<") {
+                            currentPart += ' <br id="brName">';
+                            k = k + 4;
+                        }
+                        currentPart += beginning[k];
+                        text.html(currentPart);
+                        k++;
+                        writing(text);
+                    } else if (k === (beginning.length)) {
+                        currentPart += " <br>";
+                        text.html(currentPart);
+                        opening = true;
+                        writing(text);
+                    }
+                }, interval);
+            } else if (opening) { // sentences
+                setTimeout(function () {
+                    interval = 50;
+                    if (j === lengthSentence) {
+                        forward = false;
+                    }
+                    if (j === lengthSentence - 2) {
+                        $(".original").one().addClass("onScreen");
+                    }
+                    if (j === lengthSentence - 1 && forward) {
+                        interval = pauseEnd;
+                    }
+                    if (j < lengthSentence && forward) {
+                        if (sections[i].sentence[j] === "&") {
+                            currentPart += "<strong>";
+                        } else if (sections[i].sentence[j] === "%") {
+                            currentPart += "</strong>";
+                        }
+                        else {
+                            currentPart += sections[i].sentence[j];
+                        }
+                        text.html(currentPart);
+                        j++;
+                    } else if (j > 0 && !forward) {
+                        if (sections[i].sentence[j] === "&") {
+                            currentPart = currentPart.slice(0, - 8);
+                        } else if (sections[i].sentence[j] === "%") {
+                            currentPart = currentPart.slice(0, - 9);
+                        }
+                        else {
+                            currentPart = currentPart.slice(0, - 1);
+                        }
+                        text.html(currentPart);
+                        j--;
+                    } else if (j === 0) {
+                        forward = true;
+                        i++;
+                    }
+                    if (i === lengthArray) {
+                        i = 0;
+                    }
+                    writing(text);
+                }, interval);
+            }
+        }
+
+
+        /* ----------------------- 
+            BACKGROUND LOOP 
+        -------------------------*/
+        function rand(min, max) {
+            return min + Math.random() * (max - min);
+        }
+        function changebackground() {
+            var body = $("body");
+            var h = rand(1, 360);
+            var s = rand(80, 90);
+            var l = rand(50, 60);
+            body.css({ // looping background
+                "background": "hsl(" + h + "," + s + "%," + l + "%)"
+            });
+        }
+
+        $(document).ready(function () {
+
+            /*--------------------
+                TYPING 
+            ----------------------*/
+            var firstTimer = 0;
+            var text = $(".jstext");
+            setTimeout(function () {
+                writing(text);
+            }, firstTimer);
+
+        });
+
+    </script>
 
 </body>
 
